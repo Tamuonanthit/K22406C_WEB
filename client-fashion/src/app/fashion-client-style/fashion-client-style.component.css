@@ -1,0 +1,80 @@
+/* General Styling */
+.title {
+    text-align: center;
+    background-color: #343a40;
+    color: #fff;
+    padding: 16px;
+    border-radius: 8px;
+  }
+  
+.error-message {
+color: #dc3545;
+font-weight: bold;
+text-align: center;
+margin: 16px 0;
+}
+
+.main-container {
+margin-top: 20px;
+}
+
+/* Select and Button Styling */
+.style-select {
+border-radius: 4px;
+padding: 8px;
+font-size: 16px;
+border: 1px solid #ced4da;
+}
+
+.fetch-btn {
+background-color: #007bff;
+color: #fff;
+padding: 8px 16px;
+font-size: 16px;
+border-radius: 4px;
+transition: background-color 0.3s;
+}
+
+.fetch-btn:hover {
+background-color: #0056b3;
+}
+
+/* Styles Section */
+.styles-container {
+margin-top: 30px;
+}
+
+.subtitle {
+text-align: center;
+background-color: #6c757d;
+color: #fff;
+padding: 12px;
+border-radius: 6px;
+margin: 20px 0;
+}
+
+/* Fashion Cards */
+.fashion-card {
+width: 18rem;
+margin: 20px auto;
+border: 1px solid #ddd;
+border-radius: 8px;
+transition: transform 0.3s, box-shadow 0.3s;
+}
+
+.fashion-card:hover {
+transform: scale(1.05);
+box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2);
+}
+
+.fashion-image {
+border-top-left-radius: 8px;
+border-top-right-radius: 8px;
+}
+
+.card-title {
+font-size: 18px;
+text-align: center;
+color: #333;
+font-weight: bold;
+}

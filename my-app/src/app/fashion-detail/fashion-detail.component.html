@@ -1,0 +1,32 @@
+<p>fashion-detail works!</p>
+<h3 class="text-center bg-dark text-white p-3">Fashion Detail</h3>
+
+<div class="container bg-light p-3">
+  Fashion Id: <input type="text" class="form-control" [(ngModel)]="fashionId">
+  <button class="btn btn-dark w-22 my-2" (click)="reset()">Reset</button>
+  &nbsp;
+  <button class="btn btn-primary w-75 my-2" (click)="searchFashion(fashionId)">Search</button>
+  <br>
+  <table class="table" border="1" *ngIf="checkId; else showErr">
+    <tr>
+      <td>Fashion Id:</td>
+      <td>{{fashion._id}}</td>
+    </tr>
+    <tr>
+      <td>Fashion Subject:</td>
+      <td>{{fashion.fashion_subject}}</td>
+    </tr>
+    <tr>
+      <td>Fashion Detail:</td>
+      <td>{{fashion.fashion_detail}}</td>
+    </tr>
+    <tr>
+      <td colspan="2">
+        <img src="{{fashion.fashion_image}}" alt="fashion image" class=w-100>
+      </td>
+    </tr>
+  </table>
+</div>
+<ng-template #showErr>
+  <p>{{errMessage}}</p>
+</ng-template>

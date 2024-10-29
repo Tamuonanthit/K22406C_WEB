@@ -1,0 +1,101 @@
+/* General Styling */
+.title {
+    text-align: center;
+    background-color: #343a40;
+    color: #fff;
+    padding: 16px;
+    border-radius: 8px;
+  }
+  
+.bg-light {
+display: flex;
+flex-direction: column;
+align-items: center; /* Căn giữa theo chiều ngang */
+}
+
+.form-container {
+background-color: #f8f9fa;
+padding: 24px;
+border-radius: 8px;
+box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+margin-top: 16px;
+width: 100%; /* Đặt chiều rộng của form-container */
+max-width: 800px; /* Giới hạn chiều rộng tối đa */
+}
+
+/* Style for table cells */
+.table td {
+padding: 12px;
+}
+
+.label {
+font-weight: bold;
+color: #495057;
+}
+
+.input-field {
+border-radius: 4px;
+border: 1px solid #ced4da;
+}
+
+.ckeditor {
+width: 100%;
+min-height: 100px;
+border-radius: 4px;
+border: 1px solid #ced4da;
+}
+
+.file-input {
+padding: 6px;
+}
+
+/* Button Styling */
+.btn {
+width: 100%;
+padding: 10px;
+font-size: 16px;
+border-radius: 8px;
+transition: all 0.3s ease;
+}
+
+.btn-danger {
+background-color: #dc3545;
+color: #fff;
+}
+
+.btn-secondary {
+background-color: #6c757d;
+color: #fff;
+}
+
+.btn-primary {
+background-color: #007bff;
+color: #fff;
+}
+
+.btn-danger:hover {
+background-color: #c82333;
+}
+
+.btn-secondary:hover {
+background-color: #5a6268;
+}
+
+.btn-primary:hover {
+background-color: #0056b3;
+}
+
+/* Error Message Styling */
+.error-message {
+color: #dc3545;
+font-weight: bold;
+text-align: center;
+margin-top: 16px;
+}
+
+/* Current image styling */
+.image-container {
+text-align: center;
+margin-top: 16px;
+}
+  

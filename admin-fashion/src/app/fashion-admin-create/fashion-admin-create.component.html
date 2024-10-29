@@ -1,0 +1,80 @@
+<p>fashion-admin-create works!</p>
+<h3 class="title">Fashion New</h3>
+
+<div class="container">
+  <div class="form-container">
+    <table class="table">
+      <tr>
+        <td class="label">Fashion Style:</td>
+        <td>
+          <input 
+            type="text" 
+            class="form-control input-field" 
+            name="style" 
+            id="style" 
+            placeholder="Nhập Style"
+            [(ngModel)]="fashion.style" 
+          />
+        </td>
+      </tr>
+      <tr>
+        <td class="label">Fashion Subject:</td>
+        <td>
+          <input 
+            type="text" 
+            class="form-control input-field" 
+            name="fashion_subject" 
+            id="fashion_subject"
+            placeholder="Nhập Subject" 
+            [(ngModel)]="fashion.fashion_subject" 
+          />
+        </td>
+      </tr>
+      <tr>
+        <td class="label">Fashion Detail:</td>
+        <td>
+          <input
+            [(ngModel)]="fashion.fashion_detail"
+            placeholder="Nhập Detail" 
+            name="fashion_detail" 
+            id="fashion_detail"
+            class="ckeditor"
+          >
+        </td>
+      </tr>
+      <tr>
+        <td class="label">Fashion Image:</td>
+        <td>
+          <input 
+            type="file" 
+            class="file-input input-field" 
+            name="fashion_image" 
+            id="fashion_image"
+            [(ngModel)]="fashion.fashion_image" 
+            (change)="onFileSelected($event, fashion)" 
+          />
+        </td>
+      </tr>
+      <tr>
+        <td>
+          <button 
+            class="btn cancel-btn" 
+            (click)="cancel()"
+          >Cancel</button>
+        </td>
+        <td>
+          <button 
+            class="btn submit-btn" 
+            (click)="postFashion()"
+          >Submit</button>
+        </td>
+      </tr>
+    </table>
+  </div>
+
+  <div class="container">
+    <p class="error-message">
+      {{errMessage}}
+    </p>
+  </div>
+</div>
