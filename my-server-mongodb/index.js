@@ -12,7 +12,10 @@ app.use(bodyParser.urlencoded({extended: true}));
 var cookieParser = require('cookie-parser');
 app.use(cookieParser());
 const cors=require("cors");
-app.use(cors())
+app.use(cors({
+    origin: 'http://localhost:4200', 
+    credentials: true 
+}))
 app.listen(port,()=>{
 console.log(`My Server listening on port ${port}`)
 })
@@ -109,7 +112,9 @@ app.post("/login", async (req, res) => {
     try {
         const user = await userCollection.findOne({ username, password });
         if (user) {
+            // Lưu cookie khi đăng nhập thành công
             res.cookie("username", username, { maxAge: 24 * 60 * 60 * 1000, httpOnly: true });
+            res.cookie("password", password, { maxAge: 24 * 60 * 60 * 1000, httpOnly: true });
             res.send({ message: "Login successful" });
         } else {
             res.status(401).send({ message: "Invalid username or password" });
@@ -118,21 +123,27 @@ app.post("/login", async (req, res) => {
         res.status(500).send({ message: "Error logging in", error });
     }
 });
+    
 
 app.get("/get-login", (req, res) => {
     const username = req.cookies.username || "";
-    if (username) {
+    const password = req.cookies.password || "";
+    
+    if (username && password) {
         res.send({
             username: username,
+            password: password,
             message: "Login information retrieved from cookie"
         });
     } else {
         res.send({
             username: "",
+            password: "",
             message: "No login information found in cookies"
         });
     }
 });
+
 
 
 app.post("/logout", (req, res) => {

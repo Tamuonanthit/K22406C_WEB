@@ -22,5 +22,6 @@ export class AppRoutingModule { }
 export const RoutingComponents = [
   FashionComponent,
   FashionDetailComponent,
-  FashionNewComponent
+  FashionNewComponent,
+  LoginComponent
 ];

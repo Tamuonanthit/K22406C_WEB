@@ -1,30 +1,38 @@
 import { Component } from '@angular/core';
 import { LoginService } from '../../../service/login.service';
 import { Router } from '@angular/router';
+import { OnInit } from '@angular/core';
+import { HttpClient } from '@angular/common/http';
 @Component({
   selector: 'app-login',
   templateUrl: './login.component.html',
   styleUrl: './login.component.css'
 })
-export class LoginComponent {
-  login = {
-    username: '',
-    password: ''
-  };
-  
+export class LoginComponent implements OnInit {
+  loginData = { username: '', password: '' };
+  message = '';
 
-  constructor(private loginService: LoginService, private router: Router) {}
+  constructor(private http: HttpClient) {}
 
-  getFashion() {
-    this.loginService.loginUser(this.login).subscribe(
-      (response: any) => {
-        console.log('Login successful', response);
-        this.router.navigate(['/fashions']); 
-      },
-      (error: any) => {
-        console.error('Login failed', error);
-        alert('Invalid username or password'); 
-      }
-    );
+  ngOnInit() {
+    this.getLoginFromCookie(); 
+  }
+
+  login() {
+    this.http.post('http://localhost:3002/login', this.loginData, { withCredentials: true })
+      .subscribe((res: any) => {
+        this.message = res.message;
+      }, error => {
+        this.message = error.error.message;
+      });
+  }
+
+  getLoginFromCookie() {
+    this.http.get('http://localhost:3002/get-login', { withCredentials: true })
+      .subscribe((res: any) => {
+        this.loginData.username = res.username;
+        this.loginData.password = res.password;
+        this.message = res.message;
+      });
   }
 }
