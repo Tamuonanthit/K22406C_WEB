@@ -9,6 +9,7 @@ import { FashionComponent } from './fashion/fashion.component';
 import { FashionNewComponent } from './fashion-new/fashion-new.component';
 import { FashionDetailComponent } from './fashion-detail/fashion-detail.component';
 import { FashionDeleteComponent } from './fashion-delete/fashion-delete.component';
+import { LoginComponent } from './login/login.component';
 
 @NgModule({
   declarations: [
@@ -17,6 +18,7 @@ import { FashionDeleteComponent } from './fashion-delete/fashion-delete.componen
     FashionNewComponent,
     FashionDetailComponent,
     FashionDeleteComponent,
+    LoginComponent,
   ],
   imports: [
     BrowserModule,

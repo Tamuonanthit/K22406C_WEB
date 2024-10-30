@@ -8,13 +8,14 @@ import { FashionClientStyleComponent } from './fashion-client-style/fashion-clie
 import { HttpClientModule } from '@angular/common/http';
 import { FormsModule } from '@angular/forms';
 
+
 @NgModule({
   declarations: [
     AppComponent,
     RoutingComponents,
     FashionClientComponent,
     FashionClientDetailComponent,
-    FashionClientStyleComponent
+    FashionClientStyleComponent,
   ],
   imports: [
     BrowserModule,
